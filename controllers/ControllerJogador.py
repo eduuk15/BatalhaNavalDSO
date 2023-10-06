@@ -1,13 +1,17 @@
 from models.ModelJogador import Jogador
 from views.ViewJogador import ViewJogador
+from controllers.controllerMain import ControllerMain
 from datetime import date as Date
 
 class ControllerJogador:
-    def __init__(self, controle_main):
+    def __init__(self, controle_main : ControllerMain):
         self.__jogadores = []
         self.__view_jogador = ViewJogador()
         self.__controlador_main =  controle_main
 
+    @property
+    def jogadores(self):
+        return self.__jogadores
     
     def lista_de_jogadores(self):
         for player in self.__jogadores:
@@ -36,8 +40,20 @@ class ControllerJogador:
             player.senha = novos_dados_jogador["senha"]
             self.lista_de_jogadores()
         else:
-            self.__view_jogador.mostrar_mensagem("Jogador não existe")
+            self.__view_jogador.mensagem("Jogador não existe")
 
+    def excluir_jogador(self):
+        self.lista_de_jogadores()
+        dados_player = self.__view_jogador.seleciona_jogador()
+        player = self.pega_jogador_por_nome_e_senha()
+        
+        if player is not None:
+            self.__jogadores.remove(player)
+            self.__view_jogador.mensagem("Jogador Removido")
+            self.lista_de_jogadores()
+        else:
+            self.__view_jogador.mensagem("Jogador não cadastrado")
+    
 
     def abre_tela(self):
         lista_opcoes = {1: self.jogar, 2: self.cadastrar, 3: self.alterar_cadastro, 4: self.excluir_cadastro, 0: self.retornar}

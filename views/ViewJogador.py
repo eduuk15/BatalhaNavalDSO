@@ -16,7 +16,7 @@ class ViewJogador:
     def pega_dados_jogador(self):
         print("-------- INSIRA OS SEGUINTES DADOS ----------")
         nome = input("Nome do Player: ")
-        nascimento = input("Nascimento do player (##/##/####): ")
+        nascimento = input(" Data de nascimento do player (##/##/####): ")
         senha = input("Senha: ")
         return {"nome": nome, "nascimento" : nascimento, "senha": senha}
     
