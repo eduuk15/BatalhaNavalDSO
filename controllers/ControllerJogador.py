@@ -1,10 +1,15 @@
-from models.ModelJogador import Jogador
+import sys
+import os
+
+sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/models')
+sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/views')
+
 from views.ViewJogador import ViewJogador
-from controllers.controllerMain import ControllerMain
-from datetime import date as Date
+from models.ModelJogador import Jogador
+
 
 class ControllerJogador:
-    def __init__(self, controle_main : ControllerMain):
+    def __init__(self, controle_main):
         self.__jogadores = []
         self.__view_jogador = ViewJogador()
         self.__controlador_main =  controle_main
@@ -13,6 +18,10 @@ class ControllerJogador:
     def jogadores(self):
         return self.__jogadores
     
+    def existe_jogador_cadastrado(self):
+        if len(self.__jogadores) > 0 :
+            return True
+
     def lista_de_jogadores(self):
         for player in self.__jogadores:
             self.__view_jogador.mostrar_jogador({"nome": player.nome, "nascimento": player.nascimento})

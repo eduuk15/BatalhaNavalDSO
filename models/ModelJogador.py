@@ -2,7 +2,7 @@ from models.ModelPartida import Partida
 from datetime import date as Date
 
 class Jogador:
-    def __init__(self, nome: str, nascimento: Date, senha: str, partida: Partida):
+    def __init__(self, nome: str, nascimento: Date, senha: str):
         self.__nome = nome
         self.__nascimento = nascimento
         self.__senha = senha

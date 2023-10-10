@@ -1,18 +1,28 @@
+import sys
+import os
+
+
+
+sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/controllers')
+sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/views/ViewMain.py')
+
+
+
 from controllers.ControllerJogador import ControllerJogador
 from views.ViewMain import ViewMain
 
-
 class ControllerMain:
     def __init__(self) :
-        self.__viewMain = ViewMain
-        self.__contollerJogador = ControllerJogador
+        self.__viewMain = ViewMain()
+        self.__contollerJogador = ControllerJogador(self)
 
     
     def inicializa_sistema(self):
-        if len(self.__contollerJogador.jogadores) > 0 :
+        if self.__contollerJogador.existe_jogador_cadastrado():
             self.mostra_tela_main()
         else:
             self.__contollerJogador.cadastrar()
+            self.__contollerJogador.abre_tela()
     
     def cadastro(self):
         self.__contollerJogador.cadastrar()

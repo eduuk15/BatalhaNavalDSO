@@ -1,4 +1,6 @@
+import sys,os
 
+os.path.abspath(os.curdir)
 
 class ViewMain:
     def tela_opcoes(self):
