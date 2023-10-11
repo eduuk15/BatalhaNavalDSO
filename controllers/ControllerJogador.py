@@ -31,6 +31,9 @@ class ControllerJogador:
             if player.nome == nome and player.senha == senha:
                 return player
         return None
+    
+    def jogar(self):
+        self.__controlador_main.mostra_tela_main()
 
     def cadastrar(self):
         dados_jogador = self.__view_jogador.pega_dados_jogador()
@@ -54,7 +57,7 @@ class ControllerJogador:
     def excluir_jogador(self):
         self.lista_de_jogadores()
         dados_player = self.__view_jogador.seleciona_jogador()
-        player = self.pega_jogador_por_nome_e_senha()
+        player = self.pega_jogador_por_nome_e_senha(dados_player)
         
         if player is not None:
             self.__jogadores.remove(player)
@@ -63,9 +66,12 @@ class ControllerJogador:
         else:
             self.__view_jogador.mensagem("Jogador não cadastrado")
     
+    def retornar_main(self):
+        self.__controlador_main.mostra_tela_main()
 
     def abre_tela(self):
-        lista_opcoes = {1: self.jogar, 2: self.cadastrar, 3: self.alterar_cadastro, 4: self.excluir_cadastro, 0: self.retornar}
+        self.__view_jogador.tela_opcoes()
+        lista_opcoes = {1: self.jogar, 2: self.cadastrar, 3: self.alterar_cadastro, 4: self.excluir_jogador, 0: self.retornar_main}
 
         continua = True
         while continua:

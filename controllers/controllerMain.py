@@ -1,20 +1,19 @@
 import sys
 import os
 
-
-
 sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/controllers')
 sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/views/ViewMain.py')
 
 
-
 from controllers.ControllerJogador import ControllerJogador
+from controllers.ControllerPartida import ControllerPartida
 from views.ViewMain import ViewMain
 
 class ControllerMain:
     def __init__(self) :
         self.__viewMain = ViewMain()
         self.__contollerJogador = ControllerJogador(self)
+        self.__controllerPartida = ControllerPartida(self)
 
     
     def inicializa_sistema(self):
@@ -26,6 +25,9 @@ class ControllerMain:
     
     def cadastro(self):
         self.__contollerJogador.cadastrar()
+
+    def comecar_partida(self):
+        self.__controllerPartida.comecar_partida()
     
             
     def mostra_tela_main(self):

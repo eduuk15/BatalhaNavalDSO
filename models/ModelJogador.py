@@ -1,3 +1,10 @@
+import sys
+import os
+
+sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/models')
+sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/views')
+
+
 from models.ModelPartida import Partida
 from datetime import date as Date
 
