@@ -39,7 +39,6 @@ class Jogador:
     def senha(self, senha):
         self.__senha = senha
 
-    @property
     def ver_historico(self):
         return self.__historico
     

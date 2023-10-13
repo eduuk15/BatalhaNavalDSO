@@ -22,16 +22,28 @@ class ControllerMain:
         else:
             self.__contollerJogador.cadastrar()
             self.__contollerJogador.abre_tela()
-    
-    def cadastro(self):
+
+    def logar(self):
+        self.__contollerJogador.logar()
+        self.__contollerJogador.abre_tela()
+
+    def cadastra_jogador(self):
         self.__contollerJogador.cadastrar()
 
-    def comecar_partida(self):
+    def comeca_partida(self):
         self.__controllerPartida.comecar_partida()
+
+    def mensagem(self, mensagem):
+        self.__viewMain.msg(mensagem)
     
+    def exclui_cadastro(self):
+        self.__contollerJogador.excluir_jogador()
+
+    def encerra_sistema(self):
+        exit(0)
             
     def mostra_tela_main(self):
-        lista_opcoes = {1: self.logar, 2: self.cadastra_amigos, 0: self.encerra_sistema}
+        lista_opcoes = {1: self.logar, 2: self.cadastra_jogador, 3: self.exclui_cadastro, 0: self.encerra_sistema}
         
         while True:
             opcao_escolhida = self.__viewMain.tela_opcoes()

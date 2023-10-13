@@ -9,13 +9,13 @@ from models.ModelPartida import Partida
 
 class ControllerPartida:
     def __init__(self, controle_main):
-        self.__partida = Partida()
-        self.__view.partida = ViewPartida(self)
+        self.__partida = Partida
+        self.__view_partida = ViewPartida()
         self.__controlador_main =  controle_main
 
     def comecar_partida(self):
         self.posicionar_embarcacoes()
     
     def posicionar_embarcacoes(self):
-        return
+        self.__view_partida.posicionar_embarcacoes()
 
