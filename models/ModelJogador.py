@@ -1,8 +1,15 @@
+import sys
+import os
+
+sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/models')
+sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/views')
+
+
 from models.ModelPartida import Partida
 from datetime import date as Date
 
 class Jogador:
-    def __init__(self, nome: str, nascimento: Date, senha: str, partida: Partida):
+    def __init__(self, nome: str, nascimento: Date, senha: str):
         self.__nome = nome
         self.__nascimento = nascimento
         self.__senha = senha
@@ -32,7 +39,6 @@ class Jogador:
     def senha(self, senha):
         self.__senha = senha
 
-    @property
     def ver_historico(self):
         return self.__historico
     
