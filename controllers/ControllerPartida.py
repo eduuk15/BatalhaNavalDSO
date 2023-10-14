@@ -1,5 +1,4 @@
 import sys
-import os
 
 sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/models')
 sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/views')
@@ -14,8 +13,11 @@ class ControllerPartida:
         self.__controlador_main =  controle_main
 
     def comecar_partida(self):
-        self.posicionar_embarcacoes()
-    
-    def posicionar_embarcacoes(self):
-        self.__view_partida.posicionar_embarcacoes()
+        dificuldade = self.__view_partida.tamanho_mar()
+        self.__controlador_main.tamanho_mar(dificuldade)
 
+    def mensagens(self, mensagem):
+        self.__view_partida.mensagens(mensagem)
+        
+        
+        

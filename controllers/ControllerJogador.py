@@ -1,5 +1,4 @@
 import sys
-import os
 
 sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/models')
 sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/views')
@@ -27,7 +26,6 @@ class ControllerJogador:
     def jogador1(self):
         return self.__jogador1
     
-        
     def logar(self):
         self.__view_jogador.login()
         dados_jogador = self.__view_jogador.seleciona_jogador()
@@ -35,9 +33,10 @@ class ControllerJogador:
         if jogador is not None:
             self.__jogador1 = jogador
             self.__view_jogador.mensagem("Bem-Vindo " + self.__jogador1.nome)
+            return True
         else:
             self.__controlador_main.mensagem("JOGADOR NÃO CADASTRADO")
-
+            return False
 
     def lista_de_jogadores(self):
         for player in self.__jogadores:

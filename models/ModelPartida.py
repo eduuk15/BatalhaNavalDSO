@@ -14,16 +14,17 @@ class Partida:
         self.__pontuacao = None
         self.__lista_de_disparos = []
 
-
+    @property
     def pontucao(self):
         return self.__pontuacao
     
-    def alterar_pontucao(self, pontuacao):
+    @pontucao.setter
+    def pontuacao(self, pontuacao):
         self.__pontuacao = pontuacao  
 
-    def ver_diparos_feitos(self):
+    @property
+    def lista_de_disparos(self):
         return self.__lista_de_disparos
     
-    def incluir_disparo(self, disparo):
+    def adicioanr_disparo(self, disparo: str):
         self.__lista_de_disparos.append(disparo)
-

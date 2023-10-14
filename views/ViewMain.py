@@ -4,7 +4,7 @@ os.path.abspath(os.curdir)
 
 class ViewMain:
     def tela_opcoes(self):
-        print("------ OPÇÕES ------")
+        print("----------------- MENU PRINCIPAL -----------------")
         print("1 - LOGIN")
         print("2 - CADASTRAR")
         print("3 - EXCLUIR CADASTRO")
@@ -16,5 +16,5 @@ class ViewMain:
         return opcao
     
     def msg(self, mensagem):
-        print("----------------------------------------")
+        print("--------------------------------------------------")
         print(mensagem)
