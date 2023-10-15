@@ -24,8 +24,7 @@ class ControllerMar:
             mar = [[0 for _ in range(10)] for _ in range(10)]
             self.__mar_jogador.tamanho_mar(mar)
             self.__mar_pc.tamanho_mar(mar)
+
+        self.__controlador_main.mares_criados()
     
-    
-
-
-
+    def verificar_posicoes(self, posicoes_embarcacoes):
