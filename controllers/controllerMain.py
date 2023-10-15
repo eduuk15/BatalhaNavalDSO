@@ -1,9 +1,3 @@
-import sys
-
-sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/controllers')
-sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/views/ViewMain.py')
-
-
 from controllers.ControllerJogador import ControllerJogador
 from controllers.ControllerPartida import ControllerPartida
 from controllers.ControllerMar import ControllerMar
@@ -50,12 +44,6 @@ class ControllerMain:
 
     def mensagens_mar_para_partida(self, msg):
         self.__controllerPartida.mensagens(msg)
-
-
-
-
-
-
 
     def mensagem(self, mensagem):
         self.__viewMain.msg(mensagem)
