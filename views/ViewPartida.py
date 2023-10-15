@@ -1,7 +1,3 @@
-import sys,os
-
-os.path.abspath(os.curdir)
-
 class ViewPartida:
 
     def tamanho_mar(self):

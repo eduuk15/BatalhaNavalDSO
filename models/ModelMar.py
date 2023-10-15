@@ -9,8 +9,12 @@ class Mar:
                                        "p1": None}
         
     @property
-    def matriz(self):
-        return self.__matriz
+    def mar(self):
+        return self.mar
+    
+    @mar.setter
+    def mar(self, mar):
+        self.mar = mar  
     
     def tamanho_mar(self, mar):
         self.__matriz = mar

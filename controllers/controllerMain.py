@@ -1,9 +1,3 @@
-import sys
-
-sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/controllers')
-sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/views/ViewMain.py')
-
-
 from controllers.ControllerJogador import ControllerJogador
 from controllers.ControllerPartida import ControllerPartida
 from controllers.ControllerMar import ControllerMar
@@ -56,12 +50,6 @@ class ControllerMain:
     
     def leva_embarcacoes_para_o_mar(self, posicoes_embarcacoes):
         self.__controllerMar.verificar_posicoes()
-
-
-
-
-
-
 
     def mensagem(self, mensagem):
         self.__viewMain.msg(mensagem)
