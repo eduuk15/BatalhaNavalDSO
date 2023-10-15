@@ -52,7 +52,7 @@ class ControllerJogador:
         return True         
 
     def jogar(self):
-        self.__controlador_main.comeca_partida()
+        self.__controlador_main.criar_partida()
 
     def historico(self):
         return self.__jogador1.ver_historico

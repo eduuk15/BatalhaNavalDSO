@@ -21,6 +21,48 @@ class ControllerMar:
             self.__mar_pc.mar = mar
     
         self.__controlador_main.mares_criados()
-    
-   #def verificar_posicoes(self, posicoes_embarcacoes):
+
+    def verifica_coordenadas(self, posicao, tamanho, letra):
+        colunas = {"A":1, "B":2, "C":3, "D":4, "E":5, "F":6, "G":7, "H":8, "I":9, "J":10}
+
+        if tamanho != 1:
+            posicoes = posicao.split(',')
+            coluna_inicial = colunas[posicoes[0][-1]]
+            coluna_final = colunas[posicoes[1][-1]]
+            linha_inicial = posicoes[0][0:-1]
+            linha_final = posicoes[1][0:-1]
+
+            if abs(coluna_final - coluna_inicial) == tamanho + 1:
+                if coluna_final > coluna_inicial:
+                    for i in range(coluna_inicial, coluna_final + 1):
+                        mar = self.__mar_jogador.mar
+                        if mar[linha_inicial][i] == 0:
+                            self.insere_coordenada(linha_inicial, i, letra)
+                else:
+                    for i in range(coluna_final, coluna_inicial + 1):
+                        mar = self.__mar_jogador.mar
+                        if mar[linha_inicial][i] == 0:
+                            self.insere_coordenada(linha_inicial, i, letra)
+
+            elif abs(linha_final - linha_inicial) == tamanho + 1:
+                if linha_final > linha_inicial:
+                    for i in range(linha_inicial, linha_final + 1):
+                        mar = self.__mar_jogador.mar
+                        if mar[i][coluna_inicial] == 0:
+                            self.insere_coordenada(i, coluna_inicial, letra)
+                else:
+                    for i in range(coluna_final, coluna_inicial + 1):
+                        mar = self.__mar_jogador.mar
+                        if mar[i][coluna_inicial] == 0:
+                            self.insere_coordenada(i, coluna_inicial, letra)
+        else:
+            coluna = colunas[posicao[1]]
+            linha = posicao[0]
+            mar = self.__mar_jogador.mar
+            if mar[linha][coluna] == 0:
+                self.insere_coordenada(linha, coluna, letra)
+                
+                
+    def insere_coordenada(self, linha, coluna, letra):
+        self.__mar_jogador.mar[linha][coluna] = letra
     

@@ -37,7 +37,7 @@ class ControllerMain:
 
     #Parte de Criacao da Partida
     def criar_partida(self):
-        self.__controllerPartida.comecar_partida()
+        self.__controllerPartida.cria_partida()
 
     def tamanho_mar(self, dificuldade):
         self.__controllerMar.criar_mar(dificuldade)
@@ -53,6 +53,12 @@ class ControllerMain:
 
     def mensagem(self, mensagem):
         self.__viewMain.msg(mensagem)
+
+    def verifica_coordenadas(self, posicoes, tamanho):
+        self.__controllerMar.verifica_coordenadas(posicoes, tamanho)
+
+    def insere_coordenada(self, posicao, letra):
+        self.__controllerMar.insere_coordenada(posicao, letra)
 
     def encerra_sistema(self):
         exit(0)

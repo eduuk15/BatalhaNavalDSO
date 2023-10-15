@@ -16,8 +16,32 @@ class ControllerPartida:
        
     def posiciona_embarcacoes_jogador(self):
        self.__view_partida.observacoes()
-       posicoes_escolhidas = self.__view_partida.pegar_coordenadas()
+       posicoes_escolhidas = []
+    
+       i = 1
+       while i <= 3:
+        posicao = self.__view_partida.pegar_coordenadas(i, 3, 'BOTES', 1)
+        if self.__controlador_main.verifica_coordenadas(posicao, 1, 'B'):
+            continue
+        else:
+            self.__view_partida.erro_inserir_coordenada
+            i -= 1
+        i += 1
+
+
+       submarinos_escolhidos = self.__view_partida.pegar_coordenadas(2, 'SUBMARINOS', 2)
+       self.__controlador_main.verifica_coordenadas(submarinos_escolhidos)
+       
+       fragatas_escolhidas = self.__view_partida.pegar_coordenadas(2, 'FRAGATAS', 3)
+       self.__controlador_main.verifica_coordenadas(fragatas_escolhidas)
+
+       porta_aviao_escolhido = self.__view_partida.pegar_coordenadas(1, 'PORTA-AVIÕES', 4)
+       self.__controlador_main.verifica_coordenadas(porta_aviao_escolhido)
+
        self.decifra_colunas(posicoes_escolhidas)
+
+    def verifica_coordenada():
+
 
     #Substitui as letras(colunas) por n°
     def decifra_colunas(self, posicoes_escolhidas):
