@@ -20,7 +20,7 @@ class ControllerMar:
             self.__mar_jogador.mar = mar
             self.__mar_pc.mar = mar
     
+        self.__controlador_main.mares_criados()
     
-
-
-
+   #def verificar_posicoes(self, posicoes_embarcacoes):
+    

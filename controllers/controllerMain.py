@@ -36,14 +36,20 @@ class ControllerMain:
         self.__contollerJogador.excluir_jogador()
 
     #Parte de Criacao da Partida
-    def comeca_partida(self):
+    def criar_partida(self):
         self.__controllerPartida.comecar_partida()
 
     def tamanho_mar(self, dificuldade):
         self.__controllerMar.criar_mar(dificuldade)
 
-    def mensagens_mar_para_partida(self, msg):
+    def mares_criados(self):
+        self.__controllerPartida.posiciona_embarcacoes_jogador()
+
+    def mensagens_mar_para_partida(self, msg : str): 
         self.__controllerPartida.mensagens(msg)
+    
+    def leva_embarcacoes_para_o_mar(self, posicoes_embarcacoes):
+        self.__controllerMar.verificar_posicoes()
 
     def mensagem(self, mensagem):
         self.__viewMain.msg(mensagem)
