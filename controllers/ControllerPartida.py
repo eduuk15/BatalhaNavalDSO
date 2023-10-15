@@ -18,19 +18,20 @@ class ControllerPartida:
        self.__view_partida.observacoes()
        posicoes_escolhidas = []
     
-       i = 1
-       while i <= 3:
-        posicao = self.__view_partida.pegar_coordenadas(i, 3, 'BOTES', 1)
+       b = 1
+       while b <= 3:
+        posicao = self.__view_partida.pegar_coordenadas(b, 3, 'BOTES', 1)
         if self.__controlador_main.verifica_coordenadas(posicao, 1, 'B'):
             continue
         else:
             self.__view_partida.erro_inserir_coordenada
-            i -= 1
-        i += 1
+            b -= 1
+        b += 1
 
-
-       submarinos_escolhidos = self.__view_partida.pegar_coordenadas(2, 'SUBMARINOS', 2)
-       self.__controlador_main.verifica_coordenadas(submarinos_escolhidos)
+       s = 1
+       while s <= 2:
+        posicao = self.__view_partida.pegar_coordenadas(2, 'SUBMARINOS', 2)
+        if self.__controlador_main.verifica_coordenadas(posicao, 2, 'S'):
        
        fragatas_escolhidas = self.__view_partida.pegar_coordenadas(2, 'FRAGATAS', 3)
        self.__controlador_main.verifica_coordenadas(fragatas_escolhidas)
