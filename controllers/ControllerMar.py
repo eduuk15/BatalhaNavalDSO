@@ -27,4 +27,5 @@ class ControllerMar:
 
         self.__controlador_main.mares_criados()
     
-    def verificar_posicoes(self, posicoes_embarcacoes):
+   #def verificar_posicoes(self, posicoes_embarcacoes):
+    
