@@ -1,8 +1,3 @@
-import sys
-
-sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/models')
-sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/views')
-
 from views.ViewJogador import ViewJogador
 from models.ModelJogador import Jogador
 
@@ -57,7 +52,7 @@ class ControllerJogador:
         return True         
 
     def jogar(self):
-        self.__controlador_main.comecar_partida()
+        self.__controlador_main.comeca_partida()
 
     def historico(self):
         return self.__jogador1.ver_historico

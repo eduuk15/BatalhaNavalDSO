@@ -1,8 +1,3 @@
-import sys
-
-sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/models')
-sys.path.insert(0, '/Layon/UFSC/2° Semestre/DSO/Trabalho/BatalhaNavalDSO/views')
-
 from views.ViewPartida import ViewPartida
 from models.ModelPartida import Partida
 
