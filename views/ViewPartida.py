@@ -23,8 +23,8 @@ class ViewPartida:
     def texto_pega_coordenadas(self):
         print("INDIQUE A POSIÇÃO INICIAL E A FINAL, RESPECTIVAMENTE")
         print("A VERIFICAÇÃO SE A EMBARCAÇÃO SERÁ DIRECIONADA NA VERTICAL OU HORIZONTAL, DEPENDE DA SUA ESCOLHA:")
-        print("CASO AS OS NÚMEROS - LINHAS FOREM IGUAIS, A EMBARCAÇÃO SERÁ NA VERTICAL")
-        print("CASO AS AS LETRAS - COLUNAS FOREM IGUAIS, A EMBARCAÇÃO SERÁ NA HORIZONTAL")
+        print("CASO OS NÚMEROS - LINHAS -  FOREM IGUAIS,  A EMBARCAÇÃO ESTARÁ NA HORIZONTAL")
+        print("CASO AS LETRAS - COLUNAS - FOREM IGUAIS, A EMBARCAÇÃO ESTARÁ NA VERTICAL")
         print("EXEMPLO: 5A,7A")
         print("POSIÇÃO DESEJADA: ")
 
@@ -33,23 +33,15 @@ class ViewPartida:
         print("POSICIONE O",i,"°", nome_embarcacao, "(",i,"/", qtd_embarcacoes,") - OCUPA", qtd_posicoes, "POSIÇÃO:")
         if qtd_posicoes != 1:
             self.texto_pega_coordenadas()
-        posicao = input()
+        posicao = input().upper()
         return posicao
-        # for i in range(1, qtd):
-        #     print("POSICIONE O",i,"° SUBMARINOS (",i,"/2) - OCUPA 2 POSIÇÕES")
-        #     self.texto_pega_coordenadas()
-        #     posicao = input()
-        #     posicoes_escolhidas.append(posicao)
-        # for i in range(1, qtd):
-        #     print("POSICIONE O",i,"° FRAGATAS (",i,"/2) - OCUPA 3 POSIÇÕES")
-        #     self.texto_pega_coordenadas()
-        #     posicao = input()
-        #     posicoes_escolhidas.append(posicao)
-        # for i in range(1, qtd):
-        #     print("POSICIONE O",i,"° SUBMARINOS (",i,"/1) - OCUPA 4 POSIÇÕES")
-        #     self.texto_pega_coordenadas()
-        #     posicao = input()
-        #     posicoes_escolhidas.append(posicao)
+    
+    def erro_inserir_coordenadas_embarcacao(self):
+        print("------------------------------------------------------------------")
+        print(" ATENÇÃO : COORDENADAS INVÁLIDAS")
+        self.observacoes()
+       #erro_inserir_coordenadas_embarcacao
+        
 
 
     def mensagens(self, mensagem: str):

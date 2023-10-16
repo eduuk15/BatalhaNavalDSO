@@ -6,11 +6,11 @@ class Mar:
         
     @property
     def mar(self):
-        return self.mar
+        return self.__mar
     
     @mar.setter
     def mar(self, mar):
-        self.mar = mar  
+        self.__mar = mar  
     
     def tamanho_mar(self, mar):
         self.__matriz = mar

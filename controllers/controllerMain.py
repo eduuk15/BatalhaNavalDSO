@@ -47,9 +47,6 @@ class ControllerMain:
 
     def mensagens_mar_para_partida(self, msg : str): 
         self.__controllerPartida.mensagens(msg)
-    
-    def leva_embarcacoes_para_o_mar(self, posicoes_embarcacoes):
-        self.__controllerMar.verificar_posicoes()
 
     def mensagem(self, mensagem):
         self.__viewMain.msg(mensagem)
