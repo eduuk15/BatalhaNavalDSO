@@ -54,3 +54,6 @@ class ViewPartida:
 
     def mensagens(self, mensagem: str):
         print(mensagem)
+
+    def erro_inserir_coordenada(self):
+        print("ERRO AO INSERIR COORDENADA. TENTE NOVAMENTE!")

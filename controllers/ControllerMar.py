@@ -27,42 +27,58 @@ class ControllerMar:
 
         if tamanho != 1:
             posicoes = posicao.split(',')
-            coluna_inicial = colunas[posicoes[0][-1]]
-            coluna_final = colunas[posicoes[1][-1]]
-            linha_inicial = posicoes[0][0:-1]
-            linha_final = posicoes[1][0:-1]
+            coluna_inicial = int(colunas[posicoes[0][-1]])
+            coluna_final = int(colunas[posicoes[1][-1]])
+            linha_inicial = int(posicoes[0][0:-1])
+            linha_final = int(posicoes[1][0:-1])
 
-            if abs(coluna_final - coluna_inicial) == tamanho + 1:
+            if abs(coluna_final - coluna_inicial) + 1 == tamanho:
                 if coluna_final > coluna_inicial:
                     for i in range(coluna_inicial, coluna_final + 1):
                         mar = self.__mar_jogador.mar
-                        if mar[linha_inicial][i] == 0:
+                        if mar[linha_inicial - 1][i - 1] == 0:
                             self.insere_coordenada(linha_inicial, i, letra)
+                        else:
+                            return False
                 else:
                     for i in range(coluna_final, coluna_inicial + 1):
                         mar = self.__mar_jogador.mar
-                        if mar[linha_inicial][i] == 0:
+                        if mar[linha_inicial - 1][i - 1] == 0:
                             self.insere_coordenada(linha_inicial, i, letra)
+                        else:
+                            return False
 
-            elif abs(linha_final - linha_inicial) == tamanho + 1:
+            elif abs(linha_final - linha_inicial) + 1 == tamanho:
                 if linha_final > linha_inicial:
                     for i in range(linha_inicial, linha_final + 1):
                         mar = self.__mar_jogador.mar
-                        if mar[i][coluna_inicial] == 0:
+                        if mar[i - 1][coluna_inicial - 1] == 0:
                             self.insere_coordenada(i, coluna_inicial, letra)
+                        else:
+                            return False
                 else:
                     for i in range(coluna_final, coluna_inicial + 1):
                         mar = self.__mar_jogador.mar
-                        if mar[i][coluna_inicial] == 0:
+                        if mar[i - 1][coluna_inicial - 1] == 0:
                             self.insere_coordenada(i, coluna_inicial, letra)
+                        else:
+                            return False
         else:
-            coluna = colunas[posicao[1]]
-            linha = posicao[0]
+            coluna = int(colunas[posicao[1]])
+            linha = int(posicao[0])
             mar = self.__mar_jogador.mar
-            if mar[linha][coluna] == 0:
-                self.insere_coordenada(linha, coluna, letra)
+            if mar[linha - 1][coluna - 1] == 0:
+                return self.insere_coordenada(linha, coluna, letra)
+            else:
+                return False
+            
+        return True
                 
-                
+
     def insere_coordenada(self, linha, coluna, letra):
-        self.__mar_jogador.mar[linha][coluna] = letra
+        self.__mar_jogador.mar[linha - 1][coluna - 1] = letra
+        return True
+    
+    def ve_mar(self):
+        self.__viewMar.ver_mar(self.__mar_jogador.mar)
     

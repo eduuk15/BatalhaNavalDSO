@@ -54,11 +54,11 @@ class ControllerMain:
     def mensagem(self, mensagem):
         self.__viewMain.msg(mensagem)
 
-    def verifica_coordenadas(self, posicoes, tamanho):
-        self.__controllerMar.verifica_coordenadas(posicoes, tamanho)
-
-    def insere_coordenada(self, posicao, letra):
-        self.__controllerMar.insere_coordenada(posicao, letra)
+    def verifica_coordenadas(self, posicoes, tamanho, letra):
+        return self.__controllerMar.verifica_coordenadas(posicoes, tamanho, letra)
+    
+    def ve_mar(self):
+        self.__controllerMar.ve_mar()
 
     def encerra_sistema(self):
         exit(0)

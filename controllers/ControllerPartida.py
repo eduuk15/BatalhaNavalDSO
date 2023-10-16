@@ -16,33 +16,46 @@ class ControllerPartida:
        
     def posiciona_embarcacoes_jogador(self):
        self.__view_partida.observacoes()
-       posicoes_escolhidas = []
     
        b = 1
        while b <= 3:
         posicao = self.__view_partida.pegar_coordenadas(b, 3, 'BOTES', 1)
         if self.__controlador_main.verifica_coordenadas(posicao, 1, 'B'):
-            continue
+            self.__controlador_main.ve_mar()
         else:
-            self.__view_partida.erro_inserir_coordenada
+            self.__view_partida.erro_inserir_coordenada()
             b -= 1
         b += 1
 
        s = 1
        while s <= 2:
-        posicao = self.__view_partida.pegar_coordenadas(2, 'SUBMARINOS', 2)
+        posicao = self.__view_partida.pegar_coordenadas(s, 2, 'SUBMARINOS', 2)
         if self.__controlador_main.verifica_coordenadas(posicao, 2, 'S'):
+            self.__controlador_main.ve_mar()
+        else:
+           self.__view_partida.erro_inserir_coordenada()
+           s -= 1
+        s += 1
        
-       fragatas_escolhidas = self.__view_partida.pegar_coordenadas(2, 'FRAGATAS', 3)
-       self.__controlador_main.verifica_coordenadas(fragatas_escolhidas)
+       f = 1
+       while f <= 2:
+        posicao = self.__view_partida.pegar_coordenadas(f, 2, 'FRAGATAS', 3)
+        if self.__controlador_main.verifica_coordenadas(posicao, 3, 'F'):
+            self.__controlador_main.ve_mar()
+        else:
+           self.__view_partida.erro_inserir_coordenada()
+           f -= 1
+        f += 1
 
-       porta_aviao_escolhido = self.__view_partida.pegar_coordenadas(1, 'PORTA-AVIÕES', 4)
-       self.__controlador_main.verifica_coordenadas(porta_aviao_escolhido)
-
-       self.decifra_colunas(posicoes_escolhidas)
-
-    def verifica_coordenada():
-
+       p = 1
+       while p <= 1: 
+        posicao = self.__view_partida.pegar_coordenadas(p, 1, 'PORTA-AVIÕES', 4)
+        if self.__controlador_main.verifica_coordenadas(posicao, 4, 'P'):
+            self.__controlador_main.ve_mar()
+        else:
+           self.__view_partida.erro_inserir_coordenada()
+           p -= 1
+        p += 1
 
     #Substitui as letras(colunas) por n°
     def decifra_colunas(self, posicoes_escolhidas):
