@@ -20,3 +20,7 @@ class ViewMain:
         for nome, pontuacao in ranking.items():
             print(f'Nome: {nome} - Pontuação Total: {pontuacao}')
         print("------------------------------------------------------------------")
+
+    def erro_tela(self):
+        print("--------------------------------------------------")
+        print("Erro ao acessar tela. Certifique-se de escolheu uma opção válida.")

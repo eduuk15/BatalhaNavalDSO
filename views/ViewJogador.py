@@ -49,3 +49,19 @@ class ViewJogador:
         for i in range(0, len(lista_disparos)):
             print(lista_disparos[i])
         print("------------------------------------------------------------------")
+
+    def erro_data(self):
+        print("--------------------------------------------------")
+        print("Formato de data inválido. Certifique-se de que a data está no formato 'dd/mm/aaaa'.")
+
+    def erro_nome(self):
+        print("--------------------------------------------------")
+        print("Nome vazio. Certifique-se de preencher o nome.")
+
+    def erro_senha(self):
+        print("--------------------------------------------------")
+        print("Senha vazia. Certifique-se de preencher a senha.")
+
+    def erro_tela(self):
+        print("--------------------------------------------------")
+        print("Erro ao acessar a tela. Certifique-se de escolheu uma opção válida.")

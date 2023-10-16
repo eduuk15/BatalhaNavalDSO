@@ -88,7 +88,10 @@ class ControllerMain:
     def mostra_tela_main(self):
         lista_opcoes = {1: self.logar, 2: self.cadastra_jogador, 3: self.exclui_cadastro, 4: self.exibe_ranking, 0: self.encerra_sistema}
         
-        while True:
-            opcao_escolhida = self.__viewMain.tela_opcoes()
-            funcao_escolhida = lista_opcoes[opcao_escolhida]
-            funcao_escolhida()
+        try:
+            while True:
+                opcao_escolhida = self.__viewMain.tela_opcoes()
+                funcao_escolhida = lista_opcoes[opcao_escolhida]
+                funcao_escolhida()
+        except:
+            self.__viewMain.erro_tela()

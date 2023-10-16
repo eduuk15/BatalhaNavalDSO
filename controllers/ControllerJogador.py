@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from views.ViewJogador import ViewJogador
 from models.ModelJogador import Jogador
 
@@ -61,6 +63,19 @@ class ControllerJogador:
     def cadastrar(self):
         self.__view_jogador.cadastro()
         dados_jogador = self.__view_jogador.pega_dados_jogador()
+        data_string = dados_jogador['nascimento']
+        formato_data = '%d/%m/%Y'
+        try:
+            datetime.strptime(data_string, formato_data)
+            if dados_jogador['nome'] == '':
+                self.__view_jogador.erro_nome()
+                self.cadastrar()
+            if dados_jogador['senha'] == '':
+                self.__view_jogador.erro_nome()
+                self.cadastrar()
+        except ValueError:
+            self.__view_jogador.erro_data()
+            self.cadastrar()
         validacao_cadastro = self.compara_nomes_e_senhas(dados_jogador["nome"], dados_jogador["senha"])
         if validacao_cadastro == True:
             novo_jogador= Jogador(dados_jogador["nome"], dados_jogador["nascimento"], dados_jogador["senha"])
@@ -106,8 +121,11 @@ class ControllerJogador:
         lista_opcoes = {1: self.jogar, 2: self.historico, 3: self.alterar_cadastro, 0: self.retornar_main}
 
         continua = True
-        while continua:
-            lista_opcoes[self.__view_jogador.tela_opcoes()]()
+        try:
+            while continua:
+                lista_opcoes[self.__view_jogador.tela_opcoes()]()
+        except:
+            self.__view_jogador.erro_tela()
 
     def incluir_partida(self, partida):
         self.__jogador1.incluir_partida(partida)

@@ -1,4 +1,7 @@
 from controllers.ControllerMain import ControllerMain
 
 if __name__ == "__main__":
-    ControllerMain().inicializa_sistema()
+    try:
+        ControllerMain().inicializa_sistema()
+    except:
+        print('Encerrando sistema...')
