@@ -52,10 +52,11 @@ class ControllerJogador:
         return True         
 
     def jogar(self):
-        self.__controlador_main.criar_partida()
+        self.__controlador_main.criar_partida(self.__jogador1)
 
     def historico(self):
-        return self.__jogador1.ver_historico
+        for indice, partida in enumerate(self.__jogador1.historico):
+            self.__view_jogador.exibe_historico(partida.lista_de_disparos, indice)
 
     def cadastrar(self):
         self.__view_jogador.cadastro()
@@ -64,6 +65,7 @@ class ControllerJogador:
         if validacao_cadastro == True:
             novo_jogador= Jogador(dados_jogador["nome"], dados_jogador["nascimento"], dados_jogador["senha"])
             self.__jogadores.append(novo_jogador)
+            self.__jogador1 = novo_jogador
         else:
             self.__view_jogador.mensagem(validacao_cadastro)
 
@@ -106,3 +108,9 @@ class ControllerJogador:
         continua = True
         while continua:
             lista_opcoes[self.__view_jogador.tela_opcoes()]()
+
+    def incluir_partida(self, partida):
+        self.__jogador1.incluir_partida(partida)
+
+    def exibe_ranking(self):
+        self.__jogadores

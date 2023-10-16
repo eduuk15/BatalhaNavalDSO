@@ -1,8 +1,7 @@
-
-
 class Mar:
-    def __init__(self):
+    def __init__(self, de_jogador):
         self.__mar = []
+        self.__de_jogador = de_jogador
         
     @property
     def mar(self):
@@ -10,7 +9,4 @@ class Mar:
     
     @mar.setter
     def mar(self, mar):
-        self.__mar = mar  
-    
-    def tamanho_mar(self, mar):
-        self.__matriz = mar
+        self.__mar = mar

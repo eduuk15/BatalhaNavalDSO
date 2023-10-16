@@ -49,3 +49,41 @@ class ViewPartida:
 
     def erro_inserir_coordenada(self):
         print("ERRO AO INSERIR COORDENADA. TENTE NOVAMENTE!")
+
+    def fazer_jogada(self):
+        print("------------------------------------------------------------------")
+        print("FAÇA SUA JOGADA!")
+        posicao = input().upper()
+        return posicao
+    
+    def erro_ao_jogar(self):
+        print("JOGADA INVÁLIDA. TENTE NOVAMENTE.")
+
+    def acertou(self, posicao, letra, mar_exibicao):
+        embarcacoes = {'B': 'Bote', 'F': 'Fragata', 'S': 'Submarino', 'P': 'Porta-Aviões'}
+        nome_embarcacao = embarcacoes[letra]
+        print('EM ' + posicao + ' VOCÊ ACERTOU UM(A) ' + nome_embarcacao + '!.')
+        for i in range(0, len(mar_exibicao)):
+            print(mar_exibicao[i])
+    def errou(self, posicao, mar_exibicao):
+        print('EM ' + posicao + ' NÃO HÁ NENHUMA EMBARCAÇÃO. VOCÊ ERROU!')
+        for i in range(0, len(mar_exibicao)):
+            print(mar_exibicao[i])
+
+    def ganhou(self):
+        print('PARABÉNS! VOCÊ AFUNDOU TODAS AS EMBARCAÇÕES INIMIGAS. VOCÊ GANHOU!')
+
+    def perdeu(self):
+        print('OPS... O COMPUTADOR AFUNDOU TODAS AS SUAS EMBARCAÇÕES. VOCÊ PERDEU!')
+
+    def computador_acertou(self, posicao, letra):
+        embarcacoes = {'B': 'Bote', 'F': 'Fragata', 'S': 'Submarino', 'P': 'Porta-Aviões'}
+        nome_embarcacao = embarcacoes[letra]
+        print('EM ' + posicao + ' O COMPUTADOR ACERTOU UM(A) ' + nome_embarcacao + '!.')
+    def computador_errou(self, posicao):
+        print('EM ' + posicao + ' NÃO HÁ NENHUMA EMBARCAÇÃO. O COMPUTADOR ERROU!')
+
+    def exibe_pontuacao(self, pontuacao):
+        print("------------------------------------------------------------------")
+        print('PONTUAÇÃO DA PARTIDA')
+        print('JOGADOR ' + str(pontuacao[0]) + ' X ' + 'COMPUTADOR ' + str(pontuacao[1]))

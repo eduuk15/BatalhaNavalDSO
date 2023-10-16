@@ -1,23 +1,30 @@
-from models.ModelMar import Mar
-
 class Partida:
-    def __init__(self, jogador, mar):
-        self.__jogador = jogador
-        self.__mar = Mar
-        self.__pontuacao = None
+    def __init__(self):
+        self.__jogador = None
+        self.__pontuacao = [0,0]
         self.__lista_de_disparos = []
 
     @property
-    def pontucao(self):
+    def pontuacao(self):
         return self.__pontuacao
     
-    @pontucao.setter
-    def pontuacao(self, pontuacao):
-        self.__pontuacao = pontuacao  
+    def define_pontuacao(self, eh_jogador, ponto):
+        if eh_jogador:
+            self.__pontuacao[0] += ponto
+        else:
+            self.__pontuacao[1] += ponto
+
+    @property
+    def jogador(self):
+        return self.__jogador
+    
+    @jogador.setter
+    def jogador(self, jogador):
+        self.__jogador = jogador   
 
     @property
     def lista_de_disparos(self):
         return self.__lista_de_disparos
     
-    def adicioanr_disparo(self, disparo: str):
+    def adicionar_disparo(self, disparo):
         self.__lista_de_disparos.append(disparo)
