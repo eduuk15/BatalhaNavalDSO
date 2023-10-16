@@ -23,14 +23,14 @@ class ControllerMar:
         self.__controlador_main.mares_criados()
 
     def verifica_coordenadas(self, posicao, tamanho, letra):
-        colunas = {"A":1, "B":2, "C":3, "D":4, "E":5, "F":6, "G":7, "H":8, "I":9, "J":10}
+        colunas = {"A":0, "B":1, "C":2, "D":3, "E":4, "F":5, "G":6, "H":7, "I":8, "J":9}
 
         if tamanho != 1:
             posicoes = posicao.split(',')
             coluna_inicial = colunas[posicoes[0][-1]]
             coluna_final = colunas[posicoes[1][-1]]
-            linha_inicial = posicoes[0][0:-1]
-            linha_final = posicoes[1][0:-1]
+            linha_inicial = int(posicoes[0][0:-1])-1
+            linha_final = int(posicoes[1][0:-1])-1
 
             if abs(coluna_final - coluna_inicial) == tamanho + 1:
                 if coluna_final > coluna_inicial:
@@ -57,7 +57,7 @@ class ControllerMar:
                             self.insere_coordenada(i, coluna_inicial, letra)
         else:
             coluna = colunas[posicao[1]]
-            linha = posicao[0]
+            linha = int(posicao[0]) - 1
             mar = self.__mar_jogador.mar
             if mar[linha][coluna] == 0:
                 self.insere_coordenada(linha, coluna, letra)

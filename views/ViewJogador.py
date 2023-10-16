@@ -9,6 +9,7 @@ class ViewJogador:
         print("3 - ALTERAR CADASTRO")
         print("0 - RETORNAR")
 
+
         opcao =  int(input("Escolha a opcao: "))
         return opcao
     
