@@ -14,3 +14,9 @@ class ViewMain:
     def msg(self, mensagem):
         print("--------------------------------------------------")
         print(mensagem)
+
+    def exibe_ranking(self, ranking):
+        print("----------------------------- RANKING ----------------------------")
+        for nome, pontuacao in ranking.items():
+            print(f'Nome: {nome} - Pontuação Total: {pontuacao}')
+        print("------------------------------------------------------------------")

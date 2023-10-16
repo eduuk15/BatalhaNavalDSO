@@ -1,19 +1,12 @@
-
-
 class Mar:
-    def __init__(self):
+    def __init__(self, de_jogador):
         self.__mar = []
-        self.__posicoes_embarcacoes = {b1: None, b2: None, b3: None,
-                                       s1: None, s2: None,
-                                       f1: None, f2: None,
-                                       p1: None}
+        self.__de_jogador = de_jogador
         
     @property
     def mar(self):
-        return self.mar
+        return self.__mar
     
     @mar.setter
     def mar(self, mar):
-        self.mar = mar  
-    
-    
+        self.__mar = mar

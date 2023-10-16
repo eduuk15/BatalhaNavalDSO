@@ -9,6 +9,7 @@ class ViewJogador:
         print("3 - ALTERAR CADASTRO")
         print("0 - RETORNAR")
 
+
         opcao =  int(input("Escolha a opcao: "))
         return opcao
     
@@ -42,3 +43,9 @@ class ViewJogador:
     def mensagem(self, mensagem: str):
         print("--------------------------------------------------")
         print(mensagem)
+
+    def exibe_historico(self, lista_disparos, n_partida):
+        print("--------------- PARTIDA " +  str(n_partida + 1) + " --------------")
+        for i in range(0, len(lista_disparos)):
+            print(lista_disparos[i])
+        print("------------------------------------------------------------------")

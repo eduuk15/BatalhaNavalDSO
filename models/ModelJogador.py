@@ -17,10 +17,10 @@ class Jogador:
         self.__nome = nome
     
     @property
-    def nasciemnto(self):
+    def nascimento(self):
         return self.__nascimento
     
-    @nasciemnto.setter
+    @nascimento.setter
     def nascimento(self, nascimento: Date):
         self.__nascimento = nascimento
     
@@ -32,7 +32,8 @@ class Jogador:
     def senha(self, senha):
         self.__senha = senha
 
-    def ver_historico(self):
+    @property
+    def historico(self):
         return self.__historico
     
     def incluir_partida(self, partida: Partida):
