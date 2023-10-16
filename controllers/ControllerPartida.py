@@ -16,7 +16,10 @@ class ControllerPartida:
                                     ]
 
     def cria_partida(self, jogador):
-        self.__partida.jogador == jogador
+        self.__partida = Partida()
+        self.__partida.lista_de_disparos = []
+        self.__partida.pontuacao = [0,0]
+        self.__partida.jogador = jogador
         dificuldade = self.__view_partida.tamanho_mar()
         self.__controlador_main.tamanho_mar(dificuldade)
        

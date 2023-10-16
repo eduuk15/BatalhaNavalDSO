@@ -13,7 +13,7 @@ class ViewPartida:
     def observacoes(self):
         print("------------------------------------------------------------------")
         print("-------------------------- OBSERVAÇÕES ---------------------------")
-        print("AS EMBARCÇÕES SERÃO POSICIONADAS NA DIREÇÃO HORIZONTAL OU VERTICAL")
+        print("AS EMBARCAÇÕES SERÃO POSICIONADAS NA DIREÇÃO HORIZONTAL OU VERTICAL")
         print("NÃO SERÁ PERMITIDO SOBREPOSIÇÃO DE EMBARCAÇÕES")
         print("BOTES(B)        → QNTD: 3 → OCUPA 1 POSIÇÃO(ÕES)")
         print("SUBMARINOS(S)   → QNTD: 2 → OCUPA 2 POSIÇÃO(ÕES)")
@@ -40,10 +40,7 @@ class ViewPartida:
         print("------------------------------------------------------------------")
         print(" ATENÇÃO : COORDENADAS INVÁLIDAS")
         self.observacoes()
-       #erro_inserir_coordenadas_embarcacao
         
-
-
     def mensagens(self, mensagem: str):
         print(mensagem)
 

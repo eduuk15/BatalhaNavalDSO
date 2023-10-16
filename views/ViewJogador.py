@@ -45,7 +45,7 @@ class ViewJogador:
         print(mensagem)
 
     def exibe_historico(self, lista_disparos, n_partida):
-        print("------------------------PARTIDA " +  str(n_partida + 1) + " --------------------------")
+        print("--------------- PARTIDA " +  str(n_partida + 1) + " --------------")
         for i in range(0, len(lista_disparos)):
             print(lista_disparos[i])
-        print("--------------------------------------------------")
+        print("------------------------------------------------------------------")

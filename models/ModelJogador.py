@@ -38,9 +38,7 @@ class Jogador:
     
     def incluir_partida(self, partida: Partida):
     # assim quando a partida acaba deve ser incluida na lista de partidas do jogador
-        print('ta chegando aqui')
         if isinstance(partida, Partida):
-            print('ta chegando aqui 2')
             self.__historico.append(partida)
     
     # deve retornar a melhor partida do jogador (maior pontuação)
