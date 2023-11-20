@@ -39,6 +39,7 @@ class ControllerMar:
             except:
                 return False
             
+            # Verifica se a coordenada é válida
             if abs(coluna_final - coluna_inicial) + 1 == tamanho:
                 if coluna_final > coluna_inicial:
                     if eh_jogador:
